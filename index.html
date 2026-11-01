@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Easy Eyes | Eyewear that fits you</title>
+<meta name="description" content="Easy Eyes makes sunglasses, eyeglasses and screen glasses in acetate, metal and titanium.">
+<script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-card">
+      <img src="/images/lifestyle/hero.jpg" alt="Model wearing orange-tinted sunglasses" onerror="imgFail(this)">
+      <div class="hero-body">
+        <h1 class="display" id="hero-title">
+          <span class="line"><span>Frames that</span></span>
+          <span class="line"><span>look like you.</span></span>
+        </h1>
+        <p>Modern eyewear, designed to elevate every look. Light on the face, sharp in the details.</p>
+        <div class="hero-actions">
+          <a class="btn btn-white" href="/shop.html?sort=newest">Shop new arrivals</a>
+          <a class="btn btn-ghost" href="/shop.html?category=Sunglasses">Sunglasses</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEST SELLERS ============ -->
+  <section class="block" aria-labelledby="best-title">
+    <div class="row-head">
+      <h2 class="label" id="best-title">Our best sellers</h2>
+      <div class="arrows">
+        <button type="button" data-scroll="#best-scroller" data-dir="-1" aria-label="Previous">&larr;</button>
+        <button type="button" data-scroll="#best-scroller" data-dir="1" aria-label="Next">&rarr;</button>
+      </div>
+    </div>
+    <div class="scroller" id="best-scroller"></div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="block" aria-labelledby="cat-title">
+    <div class="row-head"><h2 class="label" id="cat-title">Categories</h2></div>
+    <div class="bento" id="bento"></div>
+  </section>
+
+  <!-- ============ FEATURED COLLECTION ============ -->
+  <section class="block" aria-labelledby="sum-title">
+    <div class="row-head"><h2 class="label">Featured collection</h2></div>
+    <div class="banner">
+      <img src="/images/lifestyle/summer.jpg" alt="Model in tinted sunglasses against a teal wall" loading="lazy" onerror="imgFail(this)">
+      <h2 class="display" id="sum-title">Summer<br>collection</h2>
+      <div class="banner-side">
+        <p>Bright tints, soft silhouettes and lenses that handle the glare. Easy to wear, easy to love.</p>
+        <a class="btn btn-white" href="/shop.html?category=Sunglasses">Explore collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEW ARRIVALS ============ -->
+  <section class="block" aria-labelledby="new-title">
+    <div class="row-head">
+      <h2 class="label" id="new-title">New arrivals</h2>
+      <div class="arrows">
+        <button type="button" data-scroll="#new-scroller" data-dir="-1" aria-label="Previous">&larr;</button>
+        <button type="button" data-scroll="#new-scroller" data-dir="1" aria-label="Next">&rarr;</button>
+      </div>
+    </div>
+    <div class="scroller" id="new-scroller"></div>
+  </section>
+
+  <!-- ============ MOSAIC ============ -->
+  <section class="block" aria-labelledby="mos-title">
+    <div class="mosaic dark" id="mosaic">
+      <div class="mosaic-over">
+        <h2 class="display" id="mos-title">Delivered across India</h2>
+        <div class="hero-actions">
+          <a class="btn btn-white" href="/shop.html?sort=newest">Shop new arrivals</a>
+          <a class="btn btn-ghost" href="/shop.html">Full collection</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <p class="statement">We believe great eyewear should do more than correct your sight. It should reflect who you are, lift your confidence and quietly become part of your everyday style.</p>
+
+  <!-- ============ GROUP + WORDMARK ============ -->
+  <section class="block" style="padding-top:0" aria-label="Easy Eyes community">
+    <div class="group dark">
+      <img src="/images/lifestyle/group.jpg" alt="Friends wearing colourful frames" loading="lazy" onerror="imgFail(this)">
+      <div class="group-word" aria-hidden="true">Easy Eyes</div>
+      <div class="hero-actions">
+        <a class="btn btn-white" href="/shop.html?sort=newest">Shop new arrivals</a>
+        <a class="btn btn-ghost" href="/shop.html">Featured collection</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

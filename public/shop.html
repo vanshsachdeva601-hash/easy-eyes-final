@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop | Easy Eyes</title>
+<meta name="description" content="Browse Easy Eyes sunglasses, eyeglasses and screen glasses. Filter by shape, material and price.">
+{{HEAD}}
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{HEADER}}
+
+<main class="page-pad" id="main">
+  <header class="shop-head">
+    <h1 class="display">The collection</h1>
+    <p class="count" id="count" aria-live="polite"></p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn btn-line btn-plain filter-toggle" id="open-filters" type="button">Filters</button>
+    <label class="search">
+      <span class="visually-hidden">Search frames</span>
+      <input id="q" type="search" placeholder="Search by name, shape or colour" autocomplete="off">
+    </label>
+    <label class="sort">
+      <span class="visually-hidden">Sort by</span>
+      <select id="sort">
+        <option value="featured">Featured</option>
+        <option value="newest">Newest</option>
+        <option value="price_asc">Price, low to high</option>
+        <option value="price_desc">Price, high to low</option>
+        <option value="rating">Top rated</option>
+        <option value="name">Name, A to Z</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="shop-layout">
+    <aside class="filters" id="filters" aria-label="Filters">
+      <div class="filters-head">
+        <h2>Filters</h2>
+        <button type="button" id="close-filters">Close</button>
+      </div>
+      <div id="filter-groups"></div>
+      <button type="button" class="link-btn" id="clear">Clear all filters</button>
+    </aside>
+
+    <section aria-label="Products">
+      <div class="grid" id="grid"></div>
+    </section>
+  </div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+{{FOOTER}}
+
+<script src="/js/common.js" defer></script>
+<script src="/js/shop.js" defer></script>
+</body>
+</html>

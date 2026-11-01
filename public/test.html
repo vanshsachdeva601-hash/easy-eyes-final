@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Easy Eyes - API Test Page</title>
+<style>
+  body { font-family: system-ui, sans-serif; background:#F2F3EE; color:#111311; margin:0; padding:32px; }
+  h1 { margin:0 0 4px; } p.sub { margin:0 0 24px; color:#555; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .card { background:#fff; border:1px solid #dcdcd4; border-radius:8px; padding:16px; }
+  .card h2 { font-size:16px; margin:0 0 10px; }
+  input { width:100%; box-sizing:border-box; padding:8px; margin-bottom:8px; border:1px solid #bbb; border-radius:4px; }
+  button { background:#14382A; color:#fff; border:0; padding:9px 14px; border-radius:4px; cursor:pointer; margin-right:6px; }
+  button.alt { background:#C9E07A; color:#111; }
+  pre { background:#111311; color:#C9E07A; padding:16px; border-radius:8px; overflow:auto; max-height:420px; margin-top:16px; }
+</style>
+</head>
+<body>
+  <h1>Easy Eyes - API Test Page</h1>
+  <p class="sub">Ye sirf testing ke liye hai. Asli website Phase 2 se banegi.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>1. Signup</h2>
+      <input id="s-name" placeholder="Name">
+      <input id="s-email" placeholder="Email">
+      <input id="s-pass" type="password" placeholder="Password (min 8 chars)">
+      <button onclick="signup()">Sign up</button>
+    </div>
+
+    <div class="card">
+      <h2>2. Login</h2>
+      <input id="l-email" placeholder="Email" value="admin@easyeyes.com">
+      <input id="l-pass" type="password" placeholder="Password" value="Admin@123">
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div class="card">
+      <h2>3. Session</h2>
+      <p style="font-size:14px;color:#555">"Me" ek protected route hai: logged-in na ho toh error aayega.</p>
+      <button onclick="me()">Who am I?</button>
+      <button class="alt" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="card">
+      <h2>4. Products</h2>
+      <p style="font-size:14px;color:#555">Seed data se 15 products aane chahiye.</p>
+      <button onclick="products()">Get all products</button>
+      <button class="alt" onclick="oneProduct()">Get "aria"</button>
+    </div>
+  </div>
+
+  <pre id="out">Result yahan dikhega...</pre>
+
+<script>
+  const out = document.getElementById('out');
+
+  async function call(url, method = 'GET', body) {
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: body ? { 'Content-Type': 'application/json' } : {},
+        body: body ? JSON.stringify(body) : undefined
+      });
+      const data = await res.json();
+      out.textContent = `${method} ${url}\nStatus: ${res.status}\n\n` + JSON.stringify(data, null, 2);
+    } catch (e) {
+      out.textContent = 'Request fail hui: ' + e.message;
+    }
+  }
+
+  const val = (id) => document.getElementById(id).value;
+  const signup = () => call('/api/auth/signup', 'POST', { name: val('s-name'), email: val('s-email'), password: val('s-pass') });
+  const login = () => call('/api/auth/login', 'POST', { email: val('l-email'), password: val('l-pass') });
+  const logout = () => call('/api/auth/logout', 'POST');
+  const me = () => call('/api/auth/me');
+  const products = () => call('/api/products');
+  const oneProduct = () => call('/api/products/aria');
+</script>
+</body>
+</html>

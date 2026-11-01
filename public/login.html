@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in | Easy Eyes</title>
+<meta name="description" content="Log in or create your Easy Eyes account.">
+{{HEAD}}
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{HEADER}}
+
+<main class="page-pad" id="main">
+  <div class="auth-wrap">
+    <!-- background: chhoti circular photos "stars" ki tarah, halki lines se judi (js/constellation.js) -->
+    <div class="cg" id="auth-constellation" aria-hidden="true"></div>
+    <div class="auth-card">
+      <div class="tabs" role="tablist" aria-label="Account">
+        <button type="button" role="tab" id="tab-login" aria-selected="true">Log in</button>
+        <button type="button" role="tab" id="tab-signup" aria-selected="false">Sign up</button>
+      </div>
+      <h1 class="display" id="auth-title">Welcome back</h1>
+      <form class="auth-form" id="auth-form" novalidate>
+        <div class="field" id="name-field" hidden>
+          <label for="a-name">Full name</label>
+          <input id="a-name" name="name" type="text" autocomplete="name" disabled>
+        </div>
+        <div class="field">
+          <label for="a-email">Email</label>
+          <input id="a-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="a-pass">Password</label>
+          <input id="a-pass" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <p class="form-error" id="auth-error" role="alert"></p>
+        <button class="btn" type="submit" id="auth-submit">Log in</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+{{FOOTER}}
+
+<script src="/js/common.js" defer></script>
+<script src="/js/constellation.js" defer></script>
+<script src="/js/auth.js" defer></script>
+</body>
+</html>
